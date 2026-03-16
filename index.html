@@ -5,21 +5,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
+  <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
   <script src="https://cdn.tailwindcss.com"></script>
   
   <title>Kumanime — Streaming Anime no ADS</title>
   
-  <style>
-    * {
-      scroll-behavior: smooth;
-    }
-    
-    *::-webkit-scrollbar {
-      display: none;
-    }
-  </style>
 </head>
 
 <body class="bg-slate-200">
@@ -30,6 +22,17 @@
       </div>
     </div>
   </nav>
+  
+  <div class="fixed bottom-6 right-6 flex items-center gap-2 flex-row-reverse z-20">
+    <input type="text" 
+           id="searchInput"
+           placeholder="Cari sesuatu..." 
+           class="transition-all duration-300 rounded-full border-0 focus:outline-none w-0 opacity-0 px-0 py-0 text-gray-700 placeholder-gray-400">
+    <button id="toggleButton"
+            class="w-14 h-14 rounded-full bg-red-600/50 hover:bg-red-700/50 text-white shadow-lg flex items-center justify-center focus:outline-none transition-colors">
+      <i id="icon" class="fas fa-search text-2xl icon-transition"></i>
+    </button>
+  </div>
   
   <section class="flex flex-col justify-center items-center p-4 mt-16">
   
@@ -204,6 +207,7 @@
     </div>
   </section>
   
+  <script src="js/search.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({
